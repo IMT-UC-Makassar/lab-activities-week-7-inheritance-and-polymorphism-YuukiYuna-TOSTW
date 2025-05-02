@@ -21,9 +21,12 @@ public abstract class BankAccount {
     }
 
     public void withdraw(double amount) {
-        if (amount > balanced) throw new IllegalArgumentException("Insufficient funds");
-        balanced -= amount;
+        if (balanced > amount){
+        balanced -= amount; 
+    } else {
+        throw new IllegalArgumentException("Insufficient funds");
     }
+
 
     public void transferFunds(double amount, String toAccount) {
         withdraw(amount);
