@@ -1,8 +1,9 @@
 package oop.lab;
 
 public class PlatinumCard extends Card {
-    public PlatinumCard( String cardNumber, String cardName){
-        super(cardNumber, cardName);
+
+    public PlatinumCard(String cardNumber, String holderName) {
+        super(cardNumber, holderName);
     }
 
     @Override

@@ -1,41 +1,38 @@
 package oop.lab;
 
 public class BusinessAccount extends BankAccount implements OnlineService, LoanService {
-    private String LoanStatus = "Not Applied";
+    private double loanAmount;
+    private String loanStatus;
 
-    public BusinessAccount(String accountPassword, String accountName, double balance){
-        super(accountPassword, accountName, balance);
-    }
-
-    @Override
-    public void deposit(double amount){
-        balance += amount;
-    }
-
-    @Override
-    public void withdraw(double amount){
-        balance -= amount;
-    }
-
-    @Override
-    public void onlineTransfer(double amount, String toAccount) {
-        // implementasi transfer online
+    public BusinessAccount(String accountNumber, String accountName, double balance) {
+        super(accountNumber, accountName, balance);
+        this.loanStatus = "None";
     }
 
     @Override
     public void calculateInterest() {
-        balance += balance
-         * 0.05; // 5% interest
+        double interest = balance * 0.01;
+        balance += interest;
+    }
+
+    @Override
+    public void transferFunds(double amount, String toAccount) {
+        super.transferFunds(amount, toAccount);
+    }
+
+    @Override
+    public void payBills(double amount) {
+        super.payBills(amount);
     }
 
     @Override
     public void applyForLoan(double amount) {
-        LoanStatus = "Pending";
+        this.loanAmount = amount;
+        this.loanStatus = "Pending";
     }
 
     @Override
     public String checkLoanStatus() {
-        return LoanStatus;
+        return loanStatus;
     }
 }
-

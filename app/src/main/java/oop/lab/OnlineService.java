@@ -1,5 +1,6 @@
 package oop.lab;
 
 public interface OnlineService {
-    void onlineTransfer (double amount, String toAccount);
+    void transferFunds(double amount, String toAccount);
+    void payBills(double amount);
 }

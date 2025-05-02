@@ -1,8 +1,9 @@
 package oop.lab;
 
 public class DebitCard extends Card {
-    public DebitCard(String cardNumber, String cardHolder) {
-        super(cardNumber, cardHolder);
+
+    public DebitCard(String cardNumber, String holderName) {
+        super(cardNumber, holderName);
     }
 
     @Override

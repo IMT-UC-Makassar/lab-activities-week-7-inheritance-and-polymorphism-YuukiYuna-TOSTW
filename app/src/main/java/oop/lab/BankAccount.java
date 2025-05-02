@@ -1,22 +1,18 @@
 package oop.lab;
 
 public abstract class BankAccount {
-    protected String accountPassword;
+    protected String accountNumber;
     protected String accountName;
     protected double balance;
 
-    public BankAccount (String accountPassword, String accountName, double balance) {
-        this.accountPassword = accountPassword;
+    public BankAccount(String accountNumber, String accountName, double balance) {
+        this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.balance = balance;
     }
 
     public double getBalance() {
         return balance;
-    }
-
-    public String getOwner() {
-        return accountName;
     }
 
     public void deposit(double amount) {
@@ -27,29 +23,18 @@ public abstract class BankAccount {
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
-            System.out.println(accountName + "(" + accountPassword + ") withdraw: " + amount);
-            System.out.println("Balance: " + balance);
         } else {
             throw new IllegalArgumentException("Insufficient funds");
         }
     }
 
-    public void transferFunds(double amount, String accDestination) {
-        if (balance >= amount) {
-            balance -= amount;
-            System.out.println("Transfer to: " + accDestination + " = " + amount);
-            System.out.println("Balance: " + balance);
-        } else {
-            throw new IllegalArgumentException("Not enough balance");
-        }
+    public void transferFunds(double amount, String toAccount) {
+        withdraw(amount); // Simulasi saja
     }
 
     public void payBills(double amount) {
         withdraw(amount);
     }
 
-    public abstract void calculateInterest(); // Polymorphic behavior
+    public abstract void calculateInterest(); // Polymorphic method
 }
-
-
-
