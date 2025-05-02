@@ -1,18 +1,18 @@
 package oop.lab;
 
 public class CheckingAccount extends BankAccount implements OnlineService{
-    public CheckingAccount (String accountPassword, String accountName, double money){
-        super (accountPassword, accountName, money);
+    public CheckingAccount (String accountPassword, String accountName, double balanced){
+        super (accountPassword, accountName, balanced);
     }
 
     @Override
     public void deposit(double amount){
-    money += amount;
+    balanced += amount;
     }
 
     @Override
     public void withdraw(double amount){
-    money -= amount;
+    balanced -= amount;
     }
 
     @Override

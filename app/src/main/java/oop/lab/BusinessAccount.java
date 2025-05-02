@@ -3,18 +3,18 @@ package oop.lab;
 public class BusinessAccount extends BankAccount implements OnlineService, LoanService {
     private String LoanStatus = "Not Applied";
 
-    public BusinessAccount(String accountPassword, String accountName, double money){
-        super(accountPassword, accountName, money);
+    public BusinessAccount(String accountPassword, String accountName, double balanced){
+        super(accountPassword, accountName, balanced);
     }
 
     @Override
     public void deposit(double amount){
-        money += amount;
+        balanced += amount;
     }
 
     @Override
     public void withdraw(double amount){
-        money -= amount;
+        balanced -= amount;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class BusinessAccount extends BankAccount implements OnlineService, LoanS
 
     @Override
     public void calculateInterest() {
-        money += money * 0.05; // 5% interest
+        balanced += balanced * 0.05; // 5% interest
     }
 
     @Override

@@ -1,22 +1,22 @@
 package oop.lab;
 
 public class SavingsAccount extends BankAccount implements OnlineService {
-    public SavingsAccount (String accountPassword, String accountName, double money) {
-        super (accountPassword, accountName, money);
+    public SavingsAccount (String accountPassword, String accountName, double balanced) {
+        super (accountPassword, accountName, balanced);
     }
     @Override
     public void deposit(double amount) {
-        money += amount;
+        balanced += amount;
     }
 
     @Override
     public void withdraw(double amount) {
-        money -= amount;
+        balanced -= amount;
     }
 
     @Override
     public void calculateInterest() {
-        money += money * 0.02; // 2% interest
+        balanced += balanced * 0.02; // 2% interest
     }
 
     @Override
