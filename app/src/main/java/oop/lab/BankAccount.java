@@ -26,6 +26,7 @@ public abstract class BankAccount {
     } else {
         throw new IllegalArgumentException("Insufficient funds");
     }
+    }   
 
 
     public void transferFunds(double amount, String toAccount) {
@@ -38,6 +39,7 @@ public abstract class BankAccount {
     }
 
     public abstract void calculateInterest(); // Polymorphic behavior
-}
+    }
+
 
 
