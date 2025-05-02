@@ -21,13 +21,13 @@ public abstract class BankAccount {
     }
 
     public void withdraw(double amount) {
-        if (balanced > amount){
-        balanced -= amount; 
-    } else {
+        if (balanced > amount){ 
         throw new IllegalArgumentException("Insufficient funds");
     }
+    if (amount <= 0) {
+        throw new IllegalArgumentException("Withdraw amount must be positive");
+        }
     }   
-
 
     public void transferFunds(double amount, String toAccount) {
         withdraw(amount);
