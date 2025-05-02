@@ -3,25 +3,25 @@ package oop.lab;
 public abstract class BankAccount {
     protected String accountPassword;
     protected String accountName;
-    protected double balanced;
+    protected double balance;
 
-    public BankAccount (String accountPassword, String accountName, double balanced) {
+    public BankAccount (String accountPassword, String accountName, double balance) {
         this.accountPassword = accountPassword;
         this.accountName = accountName;
-        this.balanced = balanced;
+        this.balance = balance;
     }
 
     public double getBalance() {
-        return balanced;
+        return balance;
     }
 
     public void deposit(double amount) {
         if (amount <= 0) throw new IllegalArgumentException("Invalid deposit amount");
-        balanced += amount;
+        balance += amount;
     }
 
     public void withdraw(double amount) {
-        if (balanced > amount){ 
+        if (balance > amount){ 
         throw new IllegalArgumentException("Insufficient funds");
     }
     if (amount <= 0) {
